@@ -8,6 +8,8 @@ import { createCategory } from './app/useCases/categories/createCategory';
 import { listProducts } from './app/useCases/products/listProducts';
 import { createProduct } from './app/useCases/products/createProduct';
 import { listProductsByCategory } from './app/useCases/categories/listProductsByCategory';
+import { updateProduct } from './app/useCases/products/updateProduct';
+import { deleteProduct } from './app/useCases/products/deleteProduct';
 import { listOrders } from './app/useCases/orders/listOrders';
 import { createOrder } from './app/useCases/orders/createOrder';
 import { changeOrderStatus } from './app/useCases/orders/changeOrderStatus';
@@ -40,6 +42,12 @@ router.post('/products', upload.single('image'), createProduct);
 
 //Get Products by Catergory
 router.get('/categories/:categoryId/products', listProductsByCategory);
+
+//Update Product by Id
+router.put('/products/:_id', upload.single('image'), updateProduct);
+
+//Delete Product by Id
+router.delete('/products/:_id', deleteProduct);
 
 //List Orders
 router.get('/orders', listOrders);
