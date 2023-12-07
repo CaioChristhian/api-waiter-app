@@ -28,11 +28,15 @@ const upload = multer({
 	})
 });
 
+// ----- Categories -----
 //List Catergories
 router.get('/categories', listCategories);
 
 //Create Catergory
 router.post('/categories', createCategory);
+
+
+// ----- Products -----
 
 //List Products
 router.get('/products', listProducts);
@@ -48,6 +52,9 @@ router.put('/products/:_id', upload.single('image'), updateProduct);
 
 //Delete Product by Id
 router.delete('/products/:_id', deleteProduct);
+
+
+// ----- Orders -----
 
 //List Orders
 router.get('/orders', listOrders);
