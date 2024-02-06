@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+require('dotenv').config();
 import path from 'node:path';
 
 import express from 'express';

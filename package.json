@@ -6,10 +6,12 @@
   "scripts": {
     "build": "tsc",
     "dev": "nodemon src/index.ts",
-		"start": "node dist"
+    "start": "node dist"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/express": "^4.17.19",
+    "@types/jsonwebtoken": "^9.0.5",
     "@types/multer": "^1.4.8",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
@@ -19,7 +21,10 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.1",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.6.1",
     "multer": "^1.4.5-lts.1"
   }
