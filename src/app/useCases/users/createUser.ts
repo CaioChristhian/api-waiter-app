@@ -8,6 +8,10 @@ export async function createUser(req: Request, res: Response) {
 	try {
 		const { email, username, password, role } = req.body;
 
+		if (username === undefined) {
+			return res.status(400).json({ message: 'Username is required.' });
+		}
+
 		const existingUser = await User.findOne({ email });
 		if (existingUser) {
 			return res.status(400).json({ message: 'Email already exists.' });

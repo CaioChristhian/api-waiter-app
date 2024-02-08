@@ -3,12 +3,11 @@ import { model, Schema } from 'mongoose';
 export const User =  model( 'User', new Schema({
 	email: {
 		type: String,
-		required: true,
-		unique: true
+		required: true
 	},
-	name: {
+	username: {
 		type: String,
-		unique: true
+		required: true
 	},
 	password: {
 		type: String,
@@ -17,6 +16,6 @@ export const User =  model( 'User', new Schema({
 	role: {
 		type: String,
 		enum: ['user', 'admin'],
-		default: 'user'
-	}
+		default: 'user' // Default value if not provided
+	},
 }));
