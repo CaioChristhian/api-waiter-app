@@ -18,6 +18,7 @@ import { createUser } from './app/useCases/users/createUser';
 import { loginUser } from './app/useCases/users/loginUser';
 import { deleteUser } from './app/useCases/users/deleteUser';
 import { listUsers } from './app/useCases/users/listUsers';
+import { updateUser } from './app/useCases/users/updateUser';
 
 export const router = Router();
 
@@ -46,6 +47,8 @@ router.delete('/users/:_id', deleteUser);
 //List Users
 router.get('/users', listUsers);
 
+//Update User
+router.put('/users/:_id', updateUser);
 
 // ----- Categories -----
 
