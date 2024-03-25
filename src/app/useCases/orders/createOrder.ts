@@ -1,12 +1,12 @@
 import { Request, Response } from 'express';
-
 import { Order } from '../../models/Order';
 
 export async function createOrder(req: Request, res: Response) {
 	try {
-		const { table, products } = req.body;
+		const { table, products, user } = req.body;
 
-		const order = await Order.create({ table, products });
+		// Agora 'user' é passado diretamente sem necessidade de um objeto embutido
+		const order = await Order.create({ table, products, user });
 
 		res.status(201).json(order);
 	} catch (error){
